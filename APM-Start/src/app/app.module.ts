@@ -9,6 +9,7 @@ import { ConvertToSpacesPipe } from './shared/convert-to-spaces.pipe';
 import { ProductDetailComponent } from './products/product-detail/product-detail.component';
 import { RouterModule } from '@angular/router';
 import { WelcomeComponent } from './home/welcome.component';
+import { ProductsDetailGuard } from './products/products-detail.guard';
 
 @NgModule({
   // elements of this module that are exported
@@ -26,7 +27,10 @@ import { WelcomeComponent } from './home/welcome.component';
     HttpClientModule,
     RouterModule.forRoot([
       { path: 'products', component: ProductsListComponent },
-      { path: 'products/:id', component: ProductDetailComponent },
+      { path: 'products/:id',
+       component: ProductDetailComponent,
+       canActivate: [ProductsDetailGuard]
+       },
       { path: 'welcome', component: WelcomeComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' },
