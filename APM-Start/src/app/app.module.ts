@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { ProductsListComponent } from './products/products-list.component';
 import { StarComponent } from './shared/star.component';
 import { ConvertToSpacesPipe } from './shared/convert-to-spaces.pipe';
+import { ProductDetailComponent } from './products/product-detail/product-detail.component';
+import { RouterModule } from '@angular/router';
+import { WelcomeComponent } from './home/welcome.component';
 
 @NgModule({
   // elements of this module that are exported
@@ -14,9 +17,21 @@ import { ConvertToSpacesPipe } from './shared/convert-to-spaces.pipe';
     ProductsListComponent,
     StarComponent,
     ConvertToSpacesPipe,
+    ProductDetailComponent,
   ],
   // modules that stuff in this module requires
-  imports: [BrowserModule, FormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpClientModule,
+    RouterModule.forRoot([
+      { path: 'products', component: ProductsListComponent },
+      { path: 'products/:id', component: ProductDetailComponent },
+      { path: 'welcome', component: WelcomeComponent },
+      { path: '', redirectTo: 'welcome', pathMatch: 'full' },
+      { path: '**', redirectTo: 'welcome', pathMatch: 'full' },
+    ]), // routes for the root, html5 style
+  ],
   // startup module for this module
   bootstrap: [AppComponent],
 })
