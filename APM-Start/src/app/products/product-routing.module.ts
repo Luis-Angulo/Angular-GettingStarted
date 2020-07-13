@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 
 // Routed components
 import { ProductDetailComponent } from './product-detail/product-detail.component';
-import { ProductsListComponent } from './products-list.component';
+import { ProductsListComponent } from './products-list/products-list.component';
 import { ProductsDetailGuard } from './products-detail.guard';
 
 // Module config decorator
