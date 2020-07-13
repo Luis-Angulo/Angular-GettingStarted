@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { IProduct } from './IProduct';
-import { ProductService } from './products.service';
+import { IProduct } from '../IProduct';
+import { ProductService } from '../products.service';
 
 @Component({
   // Component is called via routing, selector is no longer needed
