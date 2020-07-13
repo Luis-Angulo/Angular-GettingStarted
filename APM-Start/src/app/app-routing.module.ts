@@ -8,6 +8,7 @@ import { WelcomeComponent } from './home/welcome.component';
 // Module config decorator
 @NgModule({
   imports: [
+      // AppRouting is the base router, so it uses forRoot
     RouterModule.forRoot([
       { path: 'welcome', component: WelcomeComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },

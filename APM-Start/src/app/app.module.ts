@@ -13,7 +13,9 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
     BrowserModule,
     HttpClientModule,
-    ProductModule, // routes for the root, html5 style
+    // Routes are first match regex, general routes like
+    // wildcards ('*' in AppRoutingModule) go last
+    ProductModule,
     AppRoutingModule
   ],
   // startup module for this module
